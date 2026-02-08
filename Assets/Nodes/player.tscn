@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfxaerohp7jwh"]
+
+[ext_resource type="Script" uid="uid://ow11natc37ay" path="res://Assets/Scripts/player.gd" id="1_ndokq"]
+[ext_resource type="Texture2D" uid="uid://dknjwlqxvn7o1" path="res://Assets/Sprites/SpaceCat.png" id="2_sni06"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndokq"]
+size = Vector2(80, 90)
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_ndokq")
+
+[node name="SpaceCat" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_sni06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ndokq")
+debug_color = Color(0.99999994, 0.17301255, 0.47643644, 0.41960785)

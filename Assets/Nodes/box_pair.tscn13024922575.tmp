@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbbpatpxo2mlm"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_2d68h"]
+[ext_resource type="Script" uid="uid://bnvqdx56qcsbc" path="res://Assets/Scripts/unmoveable_box.gd" id="2_ayd34"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2d68h"]
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okfch"]
+size = Vector2(129, 128)
+
+[node name="BoxPair" type="Node2D"]
+
+[node name="moveableBox" type="RigidBody2D" parent="."]
+position = Vector2(-300, 0)
+physics_material_override = SubResource("PhysicsMaterial_2d68h")
+
+[node name="Sprite2D" type="Sprite2D" parent="moveableBox"]
+texture = ExtResource("1_2d68h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="moveableBox"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_okfch")
+debug_color = Color(0.22872606, 0.7490281, 0.35345072, 0.41960785)
+
+[node name="moveableBox2" type="RigidBody2D" parent="."]
+position = Vector2(300, 0)
+physics_material_override = SubResource("PhysicsMaterial_2d68h")
+script = ExtResource("2_ayd34")
+
+[node name="Sprite2D" type="Sprite2D" parent="moveableBox2"]
+texture = ExtResource("1_2d68h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="moveableBox2"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_okfch")
+debug_color = Color(0.94490707, 0, 0.33172607, 0.41960785)
