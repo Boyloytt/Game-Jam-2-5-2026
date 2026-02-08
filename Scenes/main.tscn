@@ -50,15 +50,15 @@ position = Vector2(0, 0.1003418)
 shape = SubResource("RectangleShape2D_bo1nx")
 debug_color = Color(2.5027991e-06, 0.56087446, 0.88284624, 0.41960785)
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="MiddleBarrier" type="StaticBody2D" parent="."]
 position = Vector2(575, 32.999996)
 rotation = 1.5707964
 scale = Vector2(8.97, 0.2)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+[node name="Sprite2D" type="Sprite2D" parent="MiddleBarrier"]
 texture = ExtResource("2_bo1nx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleBarrier"]
 position = Vector2(0, 0.1003418)
 shape = SubResource("RectangleShape2D_bo1nx")
 debug_color = Color(2.5027991e-06, 0.56087446, 0.88284624, 0.41960785)

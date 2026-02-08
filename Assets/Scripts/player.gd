@@ -1,10 +1,14 @@
 extends CharacterBody2D
+@onready var middle_barrier: StaticBody2D = $"../MiddleBarrier"
 
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -800.0
 const push_force = 70.0
 const HALFWAY_DISTANCE = 550.0
+var leftSide = true
+var rightSide = false
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -16,10 +20,18 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	# Handle Switch.
 	if Input.is_action_just_pressed("Switch"):
-		if global_position.x < 576:
-			global_position += Vector2(HALFWAY_DISTANCE, 0)
+		var distFromCen = abs(middle_barrier.global_position.x - global_position.x) * 2
+		var vec = Vector2(distFromCen, 0)
+		if leftSide:
+			global_position += vec
+			leftSide = false
 		else:
-			global_position -= Vector2(HALFWAY_DISTANCE, 0)
+			global_position -= vec
+			leftSide = true
+		#if global_position.x < 576:
+			#global_position += Vector2(HALFWAY_DISTANCE, 0)
+		#else:
+			#global_position -= Vector2(HALFWAY_DISTANCE, 0)
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:

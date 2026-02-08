@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbbpatpxo2mlm"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_2d68h"]
-[ext_resource type="Script" uid="uid://bnvqdx56qcsbc" path="res://Assets/Scripts/unmoveable_box.gd" id="2_ayd34"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_rna1c"]
+[ext_resource type="Script" uid="uid://bnvqdx56qcsbc" path="res://Assets/Scripts/unmoveable_box.gd" id="2_3dtda"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2d68h"]
 
@@ -17,7 +17,7 @@ position = Vector2(-300, 0)
 physics_material_override = SubResource("PhysicsMaterial_2d68h")
 
 [node name="Sprite2D" type="Sprite2D" parent="moveableBox"]
-texture = ExtResource("1_2d68h")
+texture = ExtResource("1_rna1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="moveableBox"]
 position = Vector2(-0.5, 0)
@@ -28,10 +28,10 @@ debug_color = Color(0.22872606, 0.7490281, 0.35345072, 0.41960785)
 position = Vector2(300, 0)
 mass = 10.272
 physics_material_override = SubResource("PhysicsMaterial_ayd34")
-script = ExtResource("2_ayd34")
+script = ExtResource("2_3dtda")
 
 [node name="Sprite2D" type="Sprite2D" parent="unmoveableBox"]
-texture = ExtResource("1_2d68h")
+texture = ExtResource("1_rna1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="unmoveableBox"]
 position = Vector2(-0.5, 0)
