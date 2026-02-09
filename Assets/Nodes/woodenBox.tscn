@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dij785jhwu8tx"]
+
+[ext_resource type="Texture2D" uid="uid://qymxi5uuhty7" path="res://Assets/Sprites/WoodenBox.png" id="1_e4hvh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e4hvh"]
+friction = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s2hh"]
+size = Vector2(122.66669, 127)
+
+[node name="woodenBox" type="RigidBody2D" groups=["Moveable"]]
+mass = 1.1
+physics_material_override = SubResource("PhysicsMaterial_e4hvh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_e4hvh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.775, 0.775)
+shape = SubResource("RectangleShape2D_0s2hh")

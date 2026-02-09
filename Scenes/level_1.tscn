@@ -1,0 +1,149 @@
+[gd_scene load_steps=6 format=3 uid="uid://evqd4tv66lx1"]
+
+[ext_resource type="Texture2D" uid="uid://blphq1iq0bije" path="res://Assets/Sprites/Wall.png" id="1_7p6j4"]
+[ext_resource type="PackedScene" uid="uid://bfxaerohp7jwh" path="res://Assets/Nodes/player.tscn" id="2_6444e"]
+[ext_resource type="PackedScene" uid="uid://dij785jhwu8tx" path="res://Assets/Nodes/woodenBox.tscn" id="3_evi0p"]
+[ext_resource type="PackedScene" uid="uid://vjc7xaa3deqv" path="res://Assets/Nodes/concreteBox.tscn" id="4_lsmp6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrdnt"]
+size = Vector2(562, 20)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_6444e")]
+position = Vector2(-508, -82)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(1.6666666, 1.6666666)
+zoom = Vector2(0.915, 0.915)
+limit_left = -626
+limit_right = 626
+limit_bottom = 33
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+drag_vertical_enabled = true
+drag_top_margin = 0.55
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(-4, 0)
+scale = Vector2(1.01, 0.27)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+texture = ExtResource("1_7p6j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+scale = Vector2(2.225, 12.205)
+shape = SubResource("RectangleShape2D_xrdnt")
+debug_color = Color(0.8812475, 0.3377792, 3.85046e-07, 0.41960785)
+
+[node name="MiddleBarrier" type="StaticBody2D" parent="."]
+position = Vector2(0, -660)
+rotation = 1.5707964
+scale = Vector2(1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="MiddleBarrier"]
+texture = ExtResource("1_7p6j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleBarrier"]
+scale = Vector2(2.225, 12.205)
+shape = SubResource("RectangleShape2D_xrdnt")
+debug_color = Color(0.8812475, 0.3377792, 3.85046e-07, 0.41960785)
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(594.00006, -662)
+rotation = -1.5707964
+scale = Vector2(1, 0.27)
+
+[node name="Sprite2D" type="Sprite2D" parent="RightWall"]
+texture = ExtResource("1_7p6j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+scale = Vector2(2.225, 12.205)
+shape = SubResource("RectangleShape2D_xrdnt")
+debug_color = Color(0.8812475, 0.3377792, 3.85046e-07, 0.41960785)
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(-594, -662)
+rotation = 1.5707964
+scale = Vector2(1, 0.27)
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftWall"]
+texture = ExtResource("1_7p6j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+scale = Vector2(2.225, 12.205)
+shape = SubResource("RectangleShape2D_xrdnt")
+debug_color = Color(0.8812475, 0.3377792, 3.85046e-07, 0.41960785)
+
+[node name="SmallPlat" type="StaticBody2D" parent="."]
+position = Vector2(56.999996, -225)
+scale = Vector2(0.07, 0.095)
+
+[node name="Sprite2D" type="Sprite2D" parent="SmallPlat"]
+texture = ExtResource("1_7p6j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallPlat"]
+scale = Vector2(2.225, 12.205)
+shape = SubResource("RectangleShape2D_xrdnt")
+debug_color = Color(0.8812475, 0.3377792, 3.85046e-07, 0.41960785)
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(-100, -309)
+scale = Vector2(0.14, 0.095)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2"]
+texture = ExtResource("1_7p6j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+scale = Vector2(2.225, 12.205)
+shape = SubResource("RectangleShape2D_xrdnt")
+debug_color = Color(0.8812475, 0.3377792, 3.85046e-07, 0.41960785)
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(488, -309)
+scale = Vector2(0.115, 0.095)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform3"]
+texture = ExtResource("1_7p6j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+scale = Vector2(2.225, 12.205)
+shape = SubResource("RectangleShape2D_xrdnt")
+debug_color = Color(0.8812475, 0.3377792, 3.85046e-07, 0.41960785)
+
+[node name="SmallPlat2" type="StaticBody2D" parent="."]
+position = Vector2(518, -451.99997)
+scale = Vector2(0.07, 0.095)
+
+[node name="Sprite2D" type="Sprite2D" parent="SmallPlat2"]
+texture = ExtResource("1_7p6j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallPlat2"]
+scale = Vector2(2.225, 12.205)
+shape = SubResource("RectangleShape2D_xrdnt")
+debug_color = Color(0.8812475, 0.3377792, 3.85046e-07, 0.41960785)
+
+[node name="SmallPlat3" type="StaticBody2D" parent="."]
+position = Vector2(-518.99994, -485.99997)
+scale = Vector2(0.07, 0.095)
+
+[node name="Sprite2D" type="Sprite2D" parent="SmallPlat3"]
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("1_7p6j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallPlat3"]
+scale = Vector2(2.225, 12.205)
+shape = SubResource("RectangleShape2D_xrdnt")
+debug_color = Color(0.8812475, 0.3377792, 3.85046e-07, 0.41960785)
+
+[node name="woodenbox2" parent="." instance=ExtResource("3_evi0p")]
+position = Vector2(-141, -85)
+
+[node name="box2" parent="woodenbox2" instance=ExtResource("4_lsmp6")]
+position = Vector2(576, 2)
+
+[node name="woodenbox" parent="." instance=ExtResource("3_evi0p")]
+position = Vector2(-137, -378)
+
+[node name="box2" parent="woodenbox" instance=ExtResource("4_lsmp6")]
+position = Vector2(576, 0)

@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -800.0
-const push_force = 70.0
+const push_force = 40.0
 const HALFWAY_DISTANCE = 550.0
 var leftSide = true
 var rightSide = false

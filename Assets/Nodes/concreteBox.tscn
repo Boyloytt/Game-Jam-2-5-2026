@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://vjc7xaa3deqv"]
+
+[ext_resource type="Texture2D" uid="uid://cpms5rucy2qch" path="res://Assets/Sprites/ConcreteBlock.png" id="1_52uua"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_52uua"]
+friction = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s2hh"]
+size = Vector2(122.66669, 127)
+
+[node name="box2" type="RigidBody2D"]
+texture_filter = 1
+mass = 1.1
+physics_material_override = SubResource("PhysicsMaterial_52uua")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_52uua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.666626, -0.5)
+scale = Vector2(0.775, 0.775)
+shape = SubResource("RectangleShape2D_0s2hh")

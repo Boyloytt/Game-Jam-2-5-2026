@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3ir376df04gd"]
+[gd_scene load_steps=6 format=3 uid="uid://d3ir376df04gd"]
 
 [ext_resource type="PackedScene" uid="uid://bfxaerohp7jwh" path="res://Assets/Nodes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://byxtftdoy6c86" path="res://Assets/Nodes/boxPair.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dij785jhwu8tx" path="res://Assets/Nodes/woodenBox.tscn" id="3_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://vjc7xaa3deqv" path="res://Assets/Nodes/concreteBox.tscn" id="4_kry3j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
 size = Vector2(128, 127.799286)
@@ -10,7 +11,18 @@ size = Vector2(128, 127.799286)
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(104, 474)
+position = Vector2(141, 511.00003)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(645, -256.6667)
+scale = Vector2(1.6666666, 1.6666666)
+limit_left = 0
+limit_right = 1152
+limit_bottom = 648
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+drag_vertical_enabled = true
+drag_top_margin = 0.55
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(576.385, 610.635)
@@ -63,5 +75,8 @@ position = Vector2(0, 0.1003418)
 shape = SubResource("RectangleShape2D_bo1nx")
 debug_color = Color(2.5027991e-06, 0.56087446, 0.88284624, 0.41960785)
 
-[node name="BoxPair" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(370, 388)
+[node name="box" parent="." instance=ExtResource("3_jjvhh")]
+position = Vector2(313, 483)
+
+[node name="box2" parent="box" instance=ExtResource("4_kry3j")]
+position = Vector2(510, -17.999992)
